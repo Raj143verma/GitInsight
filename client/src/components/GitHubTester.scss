@@ -1,0 +1,1269 @@
+@use '../styles/variables' as *;
+
+.github-tester {
+  background-color: $color-bg-subtle;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__header {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $color-border-subtle;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: 0.25rem;
+  }
+
+  &__desc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 240px;
+    padding: 0.625rem 1rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+    outline: none;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+
+  &__btn {
+    white-space: nowrap;
+  }
+
+  &__error {
+    padding: 0.875rem 1rem;
+    background-color: $color-danger-bg;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: $radius-md;
+    color: $color-danger;
+    font-size: $font-size-sm;
+  }
+
+  &__sync-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: $color-success-bg;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+
+    code {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 0.125rem 0.375rem;
+      border-radius: $radius-sm;
+      font-size: $font-size-xs;
+    }
+  }
+
+  &__profile-card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__profile-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  &__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid $color-border;
+    flex-shrink: 0;
+  }
+
+  &__profile-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  &__name-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  &__name {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__username {
+    font-size: $font-size-sm;
+    color: $color-accent;
+    font-family: $font-family-mono;
+  }
+
+  &__bio {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: 1.4;
+  }
+
+  &__meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__meta-item {
+    strong {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__profile-link {
+    color: $color-accent;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-top: 1px solid $color-border-subtle;
+    border-bottom: 1px solid $color-border-subtle;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__stat-label {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__stat-value {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: $color-text-primary;
+    font-family: $font-family-mono;
+  }
+
+  // Tabs Navigation
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 1px solid $color-border-subtle;
+    padding-bottom: 0.5rem;
+  }
+
+  &__tab {
+    padding: 0.5rem 0.875rem;
+    border-radius: $radius-md;
+    font-size: $font-size-xs;
+    font-weight: 500;
+    color: $color-text-secondary;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $color-text-primary;
+      background-color: $color-surface-hover;
+    }
+
+    &--active {
+      background-color: $color-bg-subtle;
+      color: $color-accent;
+      border-color: $color-border;
+      font-weight: 600;
+    }
+  }
+
+  &__tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  // Skill Evidence Layout
+  &__skills-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  &__skill-card {
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      border-color: $color-accent;
+      background-color: rgba(56, 189, 248, 0.04);
+    }
+
+    &--active {
+      border-color: $color-accent;
+      background-color: rgba(56, 189, 248, 0.08);
+      box-shadow: 0 0 0 1px $color-accent;
+    }
+  }
+
+  &__skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__skill-title {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__skill-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+
+    strong {
+      color: $color-text-primary;
+    }
+  }
+
+  &__evidence-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: auto;
+  }
+
+  &__evidence-pill {
+    padding: 0.125rem 0.375rem;
+    background-color: $color-surface;
+    border-radius: $radius-sm;
+    font-size: 0.6875rem;
+    color: $color-text-secondary;
+    font-family: $font-family-mono;
+  }
+
+  // Skill Detail Panel
+  &__skill-detail-panel {
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__skill-detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $color-border-subtle;
+
+    h4 {
+      font-size: $font-size-base;
+      color: $color-text-primary;
+
+      strong {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__skill-detail-subtitle {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 0.125rem;
+  }
+
+  &__close-btn {
+    padding: 0.25rem 0.625rem;
+    font-size: $font-size-xs;
+  }
+
+  &__evidence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__evidence-item {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__evidence-item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__evidence-repo-link {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $color-accent;
+    font-family: $font-family-mono;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__evidence-desc {
+    font-size: $font-size-xs;
+    color: $color-text-primary;
+    line-height: 1.4;
+  }
+
+  &__evidence-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.6875rem;
+    color: $color-text-muted;
+
+    strong {
+      color: $color-text-secondary;
+    }
+  }
+
+  // Analytics Engine Layout
+  &__analytics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__analytics-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: $color-bg-subtle;
+    padding: 1.25rem;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+  }
+
+  &__analytics-title {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  // Language Progress Bars
+  &__lang-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__lang-bar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__lang-bar-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-xs;
+  }
+
+  &__lang-name {
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__lang-percent {
+    color: $color-text-muted;
+    font-family: $font-family-mono;
+  }
+
+  &__progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: $color-surface;
+    border-radius: $radius-full;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $color-accent, #60a5fa);
+    border-radius: $radius-full;
+    transition: width 0.3s ease;
+  }
+
+  // Activity Freshness Grid
+  &__activity-freshness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+  }
+
+  &__freshness-badge {
+    padding: 0.75rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    span {
+      font-size: $font-size-xs;
+      color: $color-text-muted;
+    }
+
+    strong {
+      font-size: $font-size-sm;
+      font-family: $font-family-mono;
+      color: $color-text-primary;
+    }
+  }
+
+  // Disclaimer Box
+  &__disclaimer-box {
+    padding: 0.875rem 1rem;
+    background-color: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: $radius-md;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__disclaimer-text {
+    margin-top: 0.25rem;
+    color: $color-text-muted;
+  }
+
+  // Comparison Card
+  &__comparison-card {
+    padding: 1.25rem;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__comparison-title {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__comparison-subtitle {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  &__comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  &__delta-item {
+    padding: 0.625rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    span {
+      font-size: $font-size-xs;
+      color: $color-text-muted;
+    }
+
+    strong {
+      font-family: $font-family-mono;
+      font-size: $font-size-sm;
+
+      &.text-pos {
+        color: $color-success;
+      }
+      &.text-neg {
+        color: $color-danger;
+      }
+    }
+  }
+
+  // Tables
+  &__table-wrap {
+    overflow-x: auto;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-xs;
+    text-align: left;
+
+    th {
+      padding: 0.625rem 0.875rem;
+      background-color: rgba(0, 0, 0, 0.25);
+      color: $color-text-muted;
+      font-weight: 600;
+      border-bottom: 1px solid $color-border;
+    }
+
+    td {
+      padding: 0.625rem 0.875rem;
+      border-bottom: 1px solid $color-border-subtle;
+      color: $color-text-secondary;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    code {
+      font-family: $font-family-mono;
+      color: $color-accent;
+    }
+  }
+
+  &__table-time {
+    color: $color-text-muted;
+    font-family: $font-family-mono;
+  }
+
+  &__repos-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+
+    h4 {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+  }
+
+  &__source-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__source-label {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__source-btn {
+    padding: 0.25rem 0.5rem;
+    border-radius: $radius-sm;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $color-text-primary;
+      border-color: $color-surface-hover;
+    }
+
+    &--active {
+      background-color: $color-accent-subtle;
+      color: $color-accent;
+      border-color: rgba(56, 189, 248, 0.4);
+      font-weight: 500;
+    }
+  }
+
+  &__repo-loading,
+  &__repo-empty {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  &__repos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  &__repo-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+  }
+
+  &__repo-info {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__repo-name {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-accent;
+    font-family: $font-family-mono;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__repo-desc {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 0.25rem;
+  }
+
+  &__repo-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    font-family: $font-family-mono;
+  }
+
+  &__languages-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    h4 {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+  }
+
+  /* Repository Health & Maintenance Styles */
+  &__health-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__health-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+  }
+
+  &__filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  &__filter-label {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $color-text-secondary;
+    white-space: nowrap;
+  }
+
+  &__filter-select,
+  &__filter-input {
+    padding: 0.375rem 0.625rem;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    color: $color-text-primary;
+    font-size: $font-size-xs;
+    outline: none;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+
+  &__filter-input {
+    width: 140px;
+  }
+
+  &__filter-btn {
+    white-space: nowrap;
+  }
+
+  &__health-list-header {
+    margin-top: 0.25rem;
+
+    h4 {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-text-primary;
+    }
+  }
+
+  &__health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  &__health-card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    &--active {
+      border-color: $color-accent;
+      box-shadow: 0 0 0 1px $color-accent;
+    }
+  }
+
+  &__health-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  &__health-title-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  &__health-repo-name {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-accent;
+    font-family: $font-family-mono;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__health-card-desc {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    line-height: 1.4;
+  }
+
+  &__signals-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  &__signal-tag {
+    font-size: 0.675rem;
+    padding: 0.125rem 0.375rem;
+    border-radius: $radius-sm;
+    font-family: $font-family-mono;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border-subtle;
+    color: $color-text-secondary;
+
+    &--yes {
+      color: $color-success;
+      border-color: rgba(16, 185, 129, 0.3);
+      background-color: rgba(16, 185, 129, 0.05);
+    }
+
+    &--no {
+      color: $color-text-muted;
+      opacity: 0.7;
+    }
+  }
+
+  &__health-card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid $color-border-subtle;
+  }
+
+  &__health-counters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    font-family: $font-family-mono;
+  }
+
+  &__inspect-health-btn {
+    font-size: $font-size-xs;
+    padding: 0.25rem 0.5rem;
+  }
+
+  &__repo-detail-panel {
+    background-color: $color-surface;
+    border: 1px solid $color-accent;
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  &__repo-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+
+    h4 {
+      font-size: $font-size-base;
+      color: $color-text-primary;
+    }
+  }
+
+  &__repo-detail-subtitle {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 0.25rem;
+  }
+
+  &__repo-detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__health-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.875rem;
+  }
+
+  &__detail-box {
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: 0.875rem;
+
+    h5 {
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      color: $color-text-muted;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: $font-size-xs;
+      color: $color-text-secondary;
+      margin-bottom: 0.375rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      code {
+        font-size: $font-size-xs;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0.1rem 0.25rem;
+        border-radius: 3px;
+        color: $color-text-primary;
+      }
+    }
+  }
+
+  &__history-section {
+    h5 {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-text-primary;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Job Matching & Evidence Mapping Styles */
+  &__jd-input-card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__jd-presets-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__jd-presets-label {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $color-text-secondary;
+  }
+
+  &__jd-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__jd-title-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__jd-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    color: $color-text-primary;
+    font-size: $font-size-xs;
+    font-family: $font-family-mono;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+
+  &__jd-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__history-count-text {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__jd-results-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  &__jd-result-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__jd-meta-text {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 0.25rem;
+  }
+
+  &__jd-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__jd-pill {
+    padding: 0.375rem 0.75rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    &--active {
+      background-color: $color-accent-subtle;
+      border-color: $color-accent;
+      color: $color-accent;
+      font-weight: 600;
+    }
+  }
+
+  &__jd-requirements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  &__jd-req-card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    transition: border-color $transition-fast;
+
+    &--matched {
+      border-left: 4px solid $color-success;
+    }
+
+    &--unmatched {
+      border-left: 4px solid $color-border;
+    }
+  }
+
+  &__jd-req-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__jd-req-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__jd-req-name {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  &__jd-req-snippets {
+    background-color: $color-bg-subtle;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-sm;
+    padding: 0.5rem 0.75rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__jd-snippet-label {
+    font-weight: 600;
+    font-size: 0.675rem;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    display: block;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__jd-snippet-line {
+    font-style: italic;
+    color: $color-text-secondary;
+    font-size: $font-size-xs;
+    margin-bottom: 0.125rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__jd-evidence-trail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 0.25rem;
+  }
+
+  &__jd-trail-title {
+    font-size: 0.675rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-text-muted;
+    letter-spacing: 0.05em;
+  }
+
+  &__jd-repos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  &__jd-repo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.375rem 0.625rem;
+    background-color: $color-bg-subtle;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border-subtle;
+  }
+
+  &__jd-repo-link {
+    font-size: $font-size-xs;
+    font-family: $font-family-mono;
+    color: $color-accent;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__jd-history-box {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__jd-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__jd-history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: $color-bg-subtle;
+    border-radius: $radius-sm;
+    font-size: $font-size-xs;
+  }
+
+  &__jd-history-date {
+    margin-left: 0.5rem;
+    color: $color-text-muted;
+    font-size: 0.7rem;
+  }
+
+  &__jd-history-summary {
+    display: block;
+    color: $color-text-secondary;
+    font-size: 0.7rem;
+    margin-top: 0.125rem;
+  }
+}

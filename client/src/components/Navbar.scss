@@ -1,0 +1,94 @@
+@use '../styles/variables' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: $navbar-height;
+  background-color: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $color-border-subtle;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: $color-text-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, $color-surface, $color-surface-hover);
+    color: $color-accent;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  &__logo-text {
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $color-text-primary;
+    letter-spacing: -0.2px;
+
+    strong {
+      color: $color-accent;
+      font-weight: 600;
+    }
+  }
+
+  &__version-pill {
+    padding: 0.125rem 0.375rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    font-size: 0.6875rem;
+    color: $color-text-muted;
+    font-family: $font-family-mono;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    font-weight: 500;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+
+    &--active {
+      color: $color-accent;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}

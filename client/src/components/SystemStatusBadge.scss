@@ -1,0 +1,51 @@
+@use '../styles/variables' as *;
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all $transition-fast;
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &--connected {
+    background-color: $color-success-bg;
+    color: $color-success;
+    border-color: rgba(16, 185, 129, 0.25);
+
+    .status-badge__dot {
+      background-color: $color-success;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+    }
+  }
+
+  &--disconnected {
+    background-color: $color-danger-bg;
+    color: $color-danger;
+    border-color: rgba(239, 68, 68, 0.25);
+
+    .status-badge__dot {
+      background-color: $color-danger;
+    }
+  }
+
+  &--checking {
+    background-color: $color-warning-bg;
+    color: $color-warning;
+    border-color: rgba(245, 158, 11, 0.25);
+
+    .status-badge__dot {
+      background-color: $color-warning;
+    }
+  }
+}

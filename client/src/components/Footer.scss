@@ -1,0 +1,48 @@
+@use '../styles/variables' as *;
+
+.footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  border-top: 1px solid $color-border-subtle;
+  background-color: $color-bg-subtle;
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    font-weight: 600;
+    color: $color-text-secondary;
+  }
+
+  &__desc {
+    color: $color-text-muted;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__phase {
+    padding: 0.25rem 0.5rem;
+    background-color: $color-surface;
+    border-radius: $radius-sm;
+    font-family: $font-family-mono;
+    color: $color-text-secondary;
+  }
+}

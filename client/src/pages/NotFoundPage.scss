@@ -1,0 +1,44 @@
+@use '../styles/variables' as *;
+
+.not-found-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.not-found-card {
+  max-width: 480px;
+  text-align: center;
+  background-color: $color-bg-subtle;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__code {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: $color-accent;
+    font-family: $font-family-mono;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin-bottom: 0.75rem;
+  }
+
+  &__desc {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
